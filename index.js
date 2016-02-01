@@ -18652,6 +18652,9 @@ exports.version = "1.2.2";
             (function() {
                 ace.acequire(["ace/ace"], function(a) {
                     a && a.config.init(true);
+                    if(typeof(window) == 'undefined'){
+                        window = {};
+                    }
                     if (!window.ace)
                         window.ace = a;
                     for (var key in a) if (a.hasOwnProperty(key))
